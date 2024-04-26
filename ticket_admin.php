@@ -1,11 +1,7 @@
-
 <?php
    session_start();
    $a_id = $_SESSION['admin_id'];
 ?>
-
-
-
 
 
 <!doctype html>
@@ -117,11 +113,11 @@
 <table class="table table-dark table-striped">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">ADMIN ID</th>
+      <th scope="col">MY ADMIN ID</th>
       <th scope="col">TICKET ID</th>
       <th scope="col">RIDE ID</th>
       <th scope="col">RIDE NAME</th>
-      <th scope="col">PARK NAME</th>
+      <th scope="col">MY PARK NAME</th>
       <th scope="col">TICKET PRICE</th>
       <th scope="col">CARD PAYMENT (Card Number)</th>
       <th scope="col">CASH PAYMENT</th>
