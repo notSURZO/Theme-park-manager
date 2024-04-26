@@ -1,3 +1,13 @@
+
+<?php
+   session_start();
+   $a_id = $_SESSION['admin_id'];
+?>
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -124,7 +134,7 @@
   <tbody>
       <?php 
             require_once('dbconnect.php'); 
-            $query = "SELECT a.admin_id, v.ticket_id, v.ride_id, a.ride_name, a.park_name,a.ticket_price, v.card, v.cash, v.bkash,v.date, v.quantity, v.visitor_id FROM ride_tickets_visitors_book v, rides_admin a where v.ride_id = a.ride_id"; 
+            $query = "SELECT a.admin_id, v.ticket_id, v.ride_id, a.ride_name, a.park_name,a.ticket_price, v.card, v.cash, v.bkash,v.date, v.quantity, v.visitor_id FROM ride_tickets_visitors_book v, rides_admin a where v.ride_id = a.ride_id and a.admin_id = $a_id"; 
             $result=mysqli_query($conn,$query);  
         if (mysqli_num_rows($result)>0) {
             while ($row=mysqli_fetch_array($result)) {
