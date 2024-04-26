@@ -44,6 +44,15 @@
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
       
     }
+
+    #myInput {
+  
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
   </style>
   </head>
   <body>
@@ -191,8 +200,8 @@
 <h1>RIDES INFORMATION</h1>
 
 <br>
-
-<table class="table table-dark table-striped">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search For Ride Names..">
+<table class="table table-dark table-striped" id="myTable">
 
   <thead class="thead-dark">
     <tr>
@@ -230,7 +239,30 @@
 </section>
 
 
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
 
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
 
 		
 		<!-- Optional JavaScript -->
@@ -240,6 +272,5 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
   </body>
 </html>
-
 
 
