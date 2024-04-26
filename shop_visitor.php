@@ -25,7 +25,7 @@
       margin-left: 17%;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      background-position: center;
+      
       backdrop-filter: blur(5px);
 
    
