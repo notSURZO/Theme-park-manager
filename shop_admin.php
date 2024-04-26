@@ -40,6 +40,7 @@
           <a class="nav-link" href="rides_admin.php">Manage Rides</a>
           <a class="nav-link" href="employees.php">Manage Employees</a>
           <a class="nav-link active" aria-current="page" href="shop_admin.php">Manage Shops</a>
+	<button type="button" class="btn btn-light" style="margin-left: 200px"><a href="login.php" style="text-decoration:none;">Logout</a></button>
         </div>
       </div>
     </div>
