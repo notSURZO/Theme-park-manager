@@ -1,3 +1,8 @@
+<?php
+   session_start();
+   $v_id = $_SESSION['visitor_id'];
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,6 +31,12 @@
     -webkit-text-stroke: 0.9px black;
 
     }
+
+    .Heading h1{
+      color: rgba(255,255,255,.90); font-size: 4rem;
+    line-height: 1;font-weight: 600; 
+    -webkit-text-stroke: 0.9px black;
+    }
   </style>
   </head>
   <body>
@@ -52,6 +63,49 @@
       </div>
     </div>
   </nav>
+<br>
+
+<section class = 'Heading'>
+<h1>MY PURCHASED TICKETS INFORMATION</h1>
+<table class="table table-success table-striped">
+  <thead class="thead-dark">
+    <tr>
+    <th scope="col">MY VISITOR ID</th>
+      <th scope="col">TICKET ID</th>
+      <th scope="col">RIDE ID</th>
+      <th scope="col">RIDE NAME</th>
+      <th scope="col">PARK NAME</th>
+      <th scope="col">PURCHASE DATE</th>
+      <th scope="col">QUANTITY</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+      <?php 
+            require_once('dbconnect.php'); 
+            $query = "SELECT  v.visitor_id, v.ticket_id, v.ride_id, a.ride_name, a.park_name, v.date, v.quantity FROM ride_tickets_visitors_book v, rides_admin a where v.ride_id = a.ride_id and v.visitor_id = $v_id "; 
+            $result=mysqli_query($conn,$query);  
+        if (mysqli_num_rows($result)>0) {
+            while ($row=mysqli_fetch_array($result)) {
+    ?>
+    <tr>
+      <td><?php echo $row[0];?></td>
+      <td><?php echo $row[1];?></td>
+      <td><?php echo $row[2];?></td>
+      <td><?php echo $row[3];?></td>
+      <td><?php echo $row[4];?></td>
+      <td><?php echo $row[5];?></td>
+      <td><?php echo $row[6];?></td>
+      
+    <?php
+            }
+    }
+    ?> 
+    </tr>
+  </tbody>
+</table>
+</section>
+<br>
 <br>
 <h1 class="text-center">All Available Tickets</h1>
 <br>
