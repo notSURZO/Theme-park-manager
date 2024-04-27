@@ -200,7 +200,7 @@
 <h1>RIDES INFORMATION</h1>
 
 <br>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search For Ride Names..">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search By Park Names..">
 <table class="table table-dark table-striped" id="myTable">
 
   <thead class="thead-dark">
@@ -250,7 +250,7 @@ function myFunction() {
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
+    td = tr[i].getElementsByTagName("td")[2];
     
     if (td) {
       txtValue = td.textContent || td.innerText;
