@@ -70,7 +70,7 @@
 <table class="table table-success table-striped">
   <thead class="thead-dark">
     <tr>
-    <th scope="col">MY VISITOR ID</th>
+    <th scope="col">MY VISITOR ID(<?php echo $v_id?>)</th>
       <th scope="col">TICKET ID</th>
       <th scope="col">RIDE ID</th>
       <th scope="col">RIDE NAME</th>
