@@ -82,13 +82,14 @@
 					  <select class="form-select" id="inputGroupSelect01" name="selected_ride">
 						<option selected>Choose...</option>
 						<?php
-							$query = "SELECT ride_id, ride_name FROM rides_admin"; 
+							$query = "SELECT ride_id, ride_name, park_name  FROM rides_admin"; 
 							$row = mysqli_query($conn, $query); 
 							while ($r = mysqli_fetch_array($row)){
 								$r_id = $r['ride_id']; 
 								$r_name = $r['ride_name']; 
+								$p_name = $r['park_name'];
 
-								echo "<option value=\"$r_id\">$r_id - $r_name</option>";
+								echo "<option value=\"$r_id\">$r_id - $r_name - $p_name</option>";
 							}
 						?>
 					  </select>
