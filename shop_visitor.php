@@ -89,7 +89,7 @@
           <img src="'.$r["shop_url"].'" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Shop Type: '.$r["shop_type"].'</h5>
-            <p class="card-text">This shop belongs to '.$r["park_name"].' park. For locating it use the Shop ID below.</p>
+            <p class="card-text">This shop belongs to '.$r["park_name"].'. For locating it use the Shop ID below.</p>
             <p class="card-text"><small class="text-body-secondary">Shop ID: '.$r["shop_id"].'</small></p>        
             </div>
         </div>
